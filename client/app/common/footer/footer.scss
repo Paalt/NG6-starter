@@ -1,0 +1,37 @@
+@import '../common';
+
+.footer__column1 {
+  text-align: center;
+}
+
+.footer__logo {
+  width: 105px;
+  height: 31.25px;
+}
+
+.footer__facebook-social {
+  margin-right: 1.5rem;
+}
+
+.footer__copyright, .footer__heading, .footer__column-list-item, .footer__contact-mail {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+}
+
+.footer__copyright, .footer__heading, .footer__column-list-item, .footer__contact-mail {
+  color: $lightTextColor;
+  font-family: 'Setimo Regular';
+}
+
+.footer__column-list {
+  list-style: none;
+  padding-left: 0;
+  max-width: 10rem;
+  text-align: center;
+  margin-top: 0;
+  margin: auto;
+}
+
+.footer__heading {
+  margin-bottom: 0.25rem;
+}

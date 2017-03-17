@@ -3,7 +3,25 @@
   <hero></hero>
 </header>
 <main>
-  <div>
-    <h1>Found in {{ $ctrl.name }}.html</h1>
-  </div>
+
+  <section class="home__heading row--2x" layout="column" layout-align="center center">
+    <h1 class="display2">Hvor mye Bitcoin kan jeg kjøpe?</h1>
+  </section>
+
+  <section class="home__price-calculator row--1x" layout="column" layout-align="start center">
+    <price-calculator></price-calculator>
+  </section>
+
+  <section class="home__CTA row--1x" layout="column" layout-align="center center">
+    <md-button class="md-raised CTA__exchange-currency-button">KJØP NÅ</md-button>
+  </section>
+
+  <section class="home__security row--1x" layout="column" layout-align="start center">
+    <div flex layout="row" layout-align="center start">
+      <h3 class="security__heading heading inline">Sikker handel med</h3>
+      <img class="inline" src="app/components/home/assets/bankid-logo.png" alt="Bank Id Logo" />
+    </div>
+  </section>
+
 </main>
+<footer></footer>

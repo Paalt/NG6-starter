@@ -4,7 +4,8 @@ import './home.scss';
 
 let homeComponent = {
   restrict: 'E',
-  bindings: {},
+  bindings: {
+  },
   template,
   controller
 };

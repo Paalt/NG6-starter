@@ -1,18 +1,104 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto);
+$primaryColor:   #011c40;
+$accentColor:    #5a79ff;
+$bgColor:        #ffffff;
+$darkBgColor:    #011c40;
+$lightBgColor:   #ffffff;
+$lightTextColor: #ffffff;
+$darkTextColor:  #011c40;
+$CTAcolor: #2C7324;
 
-$primaryColor:   #0277bd;
-$accentColor:    #1de9b6;
-$bgColor:        #efefef;
-$darkBgColor:    #263238;
-$lightBgColor:   #37474f;
-$lightTextColor: #f5f5f5;
-$darkTextColor:  #212121;
+
+@font-face {
+    font-family: 'Soleto Regular';
+    src:
+      url('~/app/common/assets/fonts/Soleto_Trial_Rg.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+   }
+
+ @font-face {
+     font-family: 'Soleto Bold';
+     src:
+       url('~/app/common/assets/fonts/Soleto_Trial_Bd.ttf') format('truetype');
+     font-weight: bold;
+     font-style: normal;
+    }
+
+@font-face {
+    font-family: 'Setimo Regular';
+    src:
+      url('~/app/common/assets/fonts/Setimo_Trial_Rg.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+   }
+
+ @font-face {
+     font-family: 'Setimo Bold';
+     src:
+       url('~/app/common/assets/fonts/Setimo_Trial_Bd.ttf') format('truetype');
+     font-weight: bold;
+     font-style: normal;
+    }
+
+/* Typography */
+
+h1, h2, h3, h4, h5, h6, p {
+  color: $darkTextColor;
+}
+
+.display2 {
+  font-size: 2.8125rem;
+}
+
+.display {
+  font-size: 2.125rem;
+}
+
+
+.heading {
+  font-size: 1.25rem;
+}
+
+.subheading {
+  font-size: 0.9375rem;
+}
+
+.body {
+  font-size: 0.875rem;
+}
+
+/* Layout */
+.row--1x {
+  height: 6rem;
+}
+
+.row--2x {
+  height: 12rem;
+}
+
+.row--3x {
+  height: 18rem;
+}
+
+.row--4x {
+  height: 24rem;
+}
+
+/* Helper classes */
+.inline {
+  display: inline-block;
+}
+
+/* common */
 
 body {
    height: 100%;
    // browsers default to 16px for font-size,
    // so setting top-level font-size to 62.5%
    // scales 1rem to equal 10px.
-   font: 62.5% 'Roboto', sans-serif;
+   font: 62.5% 'Soleto Regular', sans-serif;
 }
 
+.page__footer {
+  background-color: $darkBgColor;
+}

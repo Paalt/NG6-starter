@@ -1,3 +1,26 @@
-.home {
-  color: red;
+@import '../../common/common';
+
+.home__heading {
+  text-align: center;
+
+  h1 {
+    font-weight: normal;  
+  }
+}
+
+.home__heading, .home__price-calculator, .home__CTA, .home__security {
+  background-color: $bgColor;
+}
+
+.CTA__exchange-currency-button {
+  width: 12rem;
+  height: 3.5rem;
+  background-color: $CTAcolor !important;
+  color: $lightTextColor !important;
+  font-size: 1.875rem !important;
+}
+
+.security__heading {
+  margin: 4px;
+  font-weight: normal;
 }

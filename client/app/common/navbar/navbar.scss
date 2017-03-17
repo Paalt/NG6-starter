@@ -1,22 +1,55 @@
 @import '../common';
 
 .navbar {
-  height: 6.5rem;
-  background-color: $primaryColor;
-  padding: 1rem;
+  width: 80rem;
+  background-color: $bgColor;
+  padding-left: 1.5rem;
+  padding-top: 1.25rem;
 
-  .nav-links,
-  .logo {
+  .navbar__nav-links,
+  .navbar__logo {
     display: inline-block;
   }
 
-  .logo {
-    color: $lightTextColor;
-    margin-right: 50%;
+  .navbar__logo a img {
+      height: 4rem;
   }
 
-  .nav-links span {
-    color: $lightTextColor;
-    font-size: 1.6rem;
+  .navbar__nav-links {
+    text-align: right;
+  }
+
+  .navbar__nav-links div {
+    display: inline-block;
+  }
+
+  .navbar__nav-links div span {
+    font-family: "Soleto Regular";
+    color: $darkTextColor;
+    margin-top: 0.3125rem;
+    margin-bottom: 0;
+    display: block;
+  }
+
+  .prices__buy_price, .nav-links__login {
+    border-right: 1px $darkTextColor solid;
+    padding-right: 0.75rem;
+    margin-right: 0.5rem;
+    height: 2.25rem;
+  }
+
+  .prices__sell_price, .nav-links__register {
+    margin-right: 1.5rem;
+  }
+
+  .navbar__nav-links div a button{
+    color: $darkTextColor;
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem 0;
+    text-transform: none;
+  }
+
+  .nav-links__register {
+    font-family: "Soleto Bold";
   }
 }

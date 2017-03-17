@@ -1,6 +1,7 @@
 class NavbarController {
   constructor() {
-    this.name = 'navbar';
+    this.buyPrice = '9458';
+    this.sellPrice = '9226'
   }
 }
 

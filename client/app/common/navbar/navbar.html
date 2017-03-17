@@ -1,8 +1,33 @@
-<nav class="navbar">
-  <div class="logo">
-    <h1><a ui-sref="home">{{ $ctrl.name }}</a></h1>
+<nav class="navbar padded row--1x" md-whiteframe="4" layout layout-align="center center">
+
+  <div class="navbar__logo" flex-sm="75" flex-gt-sm="50" flex-gt-md="25" >
+    <a ui-sref="home">
+      <img src="app/common/navbar/assets/BitGateLogoTransparentRetina.png" alt="BitGate Logo">
+    </a>
   </div>
-  <div class="nav-links">
-    <span><a ui-sref="about">about</a></span>
+
+  <div class="navbar__nav-links heading" flex-sm="50" flex-gt-sm="grow" flex-gt-md="grow">
+
+    <div class="prices__buy_price">
+      <span>Kjøp {{$ctrl.buyPrice}} NOK</span>
+    </div>
+
+    <div class="prices__sell_price">
+      <span>Selg {{$ctrl.sellPrice}} NOK</span>
+    </div>
+
+    <div class="nav-links__login">
+      <a ui-sref="login">
+        <md-button md-no-ink class="md-primary">Logg inn</md-button>
+      </a>
+    </div>
+
+    <div class="nav-links__register">
+      <a ui-sref="login">
+        <md-button md-no-ink class="md-primary">Bli kunde</md-button>
+      </a>
+    </div>
+
   </div>
+
 </nav>

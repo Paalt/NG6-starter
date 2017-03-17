@@ -1,7 +1,9 @@
 @import "common/common";
+@import "~angular-material/angular-material";
 
 .app {
   height: 100%;
-  background-color: $lightBgColor;
+  max-width: 80rem;
+  background-color: $bgColor;
+  margin: auto;
 }
-

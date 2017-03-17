@@ -1,0 +1,68 @@
+@import '../common';
+
+.price-calculator {
+  background-color: $bgColor;
+}
+
+.fiat-currency__amount-input, .crypto-currency__amount-input,
+.fiat-currency__amount-input md-input-container,
+.crypto-currency__amount-input md-input-container  {
+  max-width: 10rem;
+}
+
+.fiat-currency__amount-input, .crypto-currency__amount-input, .fiat-currency__selector  {
+  margin-right: 1.5rem;
+}
+
+md-input-container.md-default-theme:not(.md-input-invalid).md-input-has-value label,
+md-input-container:not(.md-input-invalid).md-input-has-value label {
+  font-size: 0.75rem;
+  color: $accentColor;
+  opacity: 0.68;
+}
+
+.fiat-currency__amount-input .amount-input__button, .crypto-currency__amount-input .amount-input__button {
+  width: 8.6rem;
+}
+
+.fiat-currency__amount-input input, .crypto-currency__amount-input input,
+.crypto-currency__selector md-select-value, .fiat-currency__selector md-select-value {
+  font-size: 1.875rem;
+  color: $darkTextColor;
+  border-color: $accentColor;
+}
+
+.price-caluclator__speed-selector {
+  position: absolute;
+  top: 30.3rem;
+}
+
+#fiat-currency__speed-selector-button, #crypto-currency__speed-selector-button,
+.fiat-currency__options-button, .crypto-currency__options-button {
+  width: 2.25rem !important;
+  height: 2.25rem !important;
+  line-height: 2.25rem !important;
+  min-height: 2.25rem !important;
+  padding: 0 !important;
+  background-color: $accentColor !important;
+}
+
+.crypto-currency__selector, .fiat-currency__selector, .crypto-currency__amount-input {
+  margin-left: 1.5rem;
+}
+
+.crypto-currency__selector md-input-container, .fiat-currency__selector md-input-container {
+  max-width: 6.5rem;
+  padding: 0 0 0.125rem 0;
+  margin: 0 0 0.6875rem 0;
+}
+
+#centerExchangeArrow {
+  font-size: 4rem;
+  opacity: 0.64;
+}
+
+.layout-fill__FABs {
+  width: 3.25rem;
+  display: block;
+}

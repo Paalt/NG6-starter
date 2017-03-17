@@ -2,8 +2,9 @@
 
 .hero {
   background-color: $darkBgColor;
-  height: 50rem;
-  padding: 3rem;
+  height: 12rem;
+  padding: 0;
+  overflow: hidden;
 
   * {
     color: $lightTextColor;
