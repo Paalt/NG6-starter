@@ -1,0 +1,59 @@
+<section class="home__CTA"
+ ng-class="$ctrl.exchangeRateConfirmationVisible ? 'row--3x' : 'row--1x'"
+ layout="column" layout-align="center center">
+
+  <md-button ng-show="!$ctrl.exchangeRateConfirmationVisible"
+  class="md-raised CTA__exchange-currency-button"
+  ng-click="$ctrl.showExchangeRateConfirmation()">KJØP NÅ</md-button>
+
+  <md-whiteframe ng-show="$ctrl.exchangeRateConfirmationVisible"
+  class="md-whiteframe-1dp exchange-rate__confirmation-box">
+    <div layout="row" layout-align="space-between center">
+      <div flex="75" layout="column">
+        <div flex layout="row" layout-align="space-around center">
+          <div flex="75">
+            <p class="heading">
+                Kjøpskurs(1 {{$ctrl.activeCryptoCurrency.abbrev}})
+            </p>
+
+            <p class="heading">
+              Transaksjonsavgift
+            </p>
+          </div>
+
+
+          <div flex="33">
+            <p class="heading exchange-rate__price">
+              {{$ctrl.exchangeRate | number: 2}} NOK
+            </p>
+
+            <p class="heading .exchange-rate__tx-fee">
+              25 NOK
+            </p>
+          </div>
+        </div>
+
+
+        <div flex layout="row" layout-align="start center">
+          <p class="heading" style="font-weight: bold">
+            Kursen låses i det du trykker fortsett
+          </p>
+        </div>
+      </div>
+
+      <div flex="25" class="CTA__exchange-currency-container">
+
+        <a ui-sref="confirm">
+          <md-button class="md-raised CTA__exchange-currency-button">Fortsett</md-button>
+        </a>
+
+      </div>
+    </div>
+
+
+
+
+
+
+  </md-whiteframe>
+</section>

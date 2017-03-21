@@ -1,0 +1,19 @@
+@import '../common';
+
+.order-confirmation__header {
+  background-color: $panelHeaderBg;
+  width: 100%;
+  padding: 0 2rem 0 2rem;
+  font-family: 'Setimo Regular';
+  font-weight: normal;
+}
+
+.order-confirmation__order-details {
+  width: 100%;
+  padding: 2rem;
+
+  .order-details__prices p {
+    font-family: 'Soleto Bold';
+    color: $accentColor;
+  }
+}

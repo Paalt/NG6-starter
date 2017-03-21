@@ -1,108 +1,111 @@
-<div class="price-calculator" layout="row" layout-align="center center">
+<section class="home__price-calculator row--1x" layout="column" layout-align="start center">
+  <div class="price-calculator" layout="row" layout-align="center center">
 
-  <div class="fiat-currency__amount-input" flex="12">
-    <md-input-container class="md-block">
-          <label>Jeg har</label>
-          <input type="number" class="amount-input__button"
-          ng-model="$ctrl.fromFiatCurrency" ng-change="$ctrl.fiatExchange()">
-    </md-input-container>
-  </div>
+    <div class="fiat-currency__amount-input" flex="12">
+      <md-input-container class="md-block">
+            <label>Jeg har</label>
+            <input type="number" class="amount-input__button"
+            ng-model="$ctrl.fromFiatCurrency" ng-change="$ctrl.onFiatExchange()">
+      </md-input-container>
+    </div>
 
-  <div class="fiat-currency__speed-selector" flex="4">
-    <span class="layout-fill__FABs"></span>
+    <div class="fiat-currency__speed-selector" flex="4">
+      <span class="layout-fill__FABs"></span>
 
-    <md-fab-speed-dial md-direction="down" md-open="$ctrl.fiatIsOpen"
-                     class="md-scale md-hover-full price-caluclator__speed-selector"
-                     ng-mouseenter="$ctrl.fiatIsOpen=true"
-                     ng-mouseleave="$ctrl.fiatIsOpen=false">
-      <md-fab-trigger>
+      <md-fab-speed-dial md-direction="down" md-open="$ctrl.fiatIsOpen"
+                       class="md-scale md-hover-full price-caluclator__speed-selector"
+                       ng-mouseenter="$ctrl.fiatIsOpen=true"
+                       ng-mouseleave="$ctrl.fiatIsOpen=false">
+        <md-fab-trigger>
 
-        <md-button aria-label="menu" class="md-fab md-warn"
-        id="fiat-currency__speed-selector-button" ng-model="$ctrl.activeFiatCurrency">
-          <img ng-src="{{$ctrl.activeFiatCurrency.img}}"
-          aria-label="{{$ctrl.activeFiatCurrency.name}}">
-        </md-button>
-      </md-fab-trigger>
-
-      <md-fab-actions>
-        <div ng-repeat="fiatCurrency in $ctrl.fiatCurrencies">
-          <md-button aria-label="{{fiatCurrency.name}}"
-          class="md-fab md-raised md-mini fiat-currency__options-button"
-          ng-click="$ctrl.setNewFiatCurrency($event, fiatCurrency)">
-            <img ng-src="{{fiatCurrency.img}}" aria-label="{{fiatCurrency.name}}">
+          <md-button aria-label="menu" class="md-fab md-warn"
+          id="fiat-currency__speed-selector-button" ng-model="$ctrl.activeFiatCurrency">
+            <img ng-src="{{$ctrl.activeFiatCurrency.img}}"
+            aria-label="{{$ctrl.activeFiatCurrency.name}}">
           </md-button>
-        </div>
-      </md-fab-actions>
+        </md-fab-trigger>
 
-    </md-fab-speed-dial>
-  </div>
+        <md-fab-actions>
+          <div ng-repeat="fiatCurrency in $ctrl.fiatCurrencies">
+            <md-button aria-label="{{fiatCurrency.name}}"
+            class="md-fab md-raised md-mini fiat-currency__options-button"
+            ng-click="$ctrl.onFiatCurrencySelected(fiatCurrency)">
+              <img ng-src="{{fiatCurrency.img}}" aria-label="{{fiatCurrency.name}}">
+            </md-button>
+          </div>
+        </md-fab-actions>
 
-  <div class="fiat-currency__selector" flex="8">
-    <md-input-container class="md-block">
-      <md-select ng-model="$ctrl.activeFiatCurrency"
-      ng-model-options="{trackBy: '$value.id'}"
-      aria-label="{{$ctrl.activeFiatCurrency.name}}">
-        <md-option ng-repeat="fiatCurrency in $ctrl.fiatCurrencies"
-        ng-value="{{fiatCurrency}}">
-          {{fiatCurrency.abbrev}}
-        </md-option>
-      </md-select>
-    </md-input-container>
-  </div>
+      </md-fab-speed-dial>
+    </div>
 
-  <div class="price-calculator__center" flex="2">
-    <i id="centerExchangeArrow" class="material-icons">forward</i>
-  </div>
+    <div class="fiat-currency__selector" flex="8">
+      <md-input-container class="md-block">
+        <md-select ng-model="$ctrl.activeFiatCurrency"
+        ng-model-options="{trackBy: '$value.id'}"
+        aria-label="{{$ctrl.activeFiatCurrency.name}}">
+          <md-option ng-repeat="fiatCurrency in $ctrl.fiatCurrencies"
+          ng-value="{{fiatCurrency}}">
+            {{fiatCurrency.abbrev}}
+          </md-option>
+        </md-select>
+      </md-input-container>
+    </div>
 
-  <div class="crypto-currency__amount-input" flex="12">
-    <md-input-container class="md-block">
-          <label>Jeg får</label>
-          <input class="amount-input__button" type="number"
-          ng-model="$ctrl.toCryptoCurrency" ng-change="$ctrl.cryptoExchange()">
-    </md-input-container>
-  </div>
+    <div class="price-calculator__center" flex="2">
+      <i id="centerExchangeArrow" class="material-icons">forward</i>
+    </div>
 
-  <div class="crypto-currency__speed-selector" flex="4">
-    <span class="layout-fill__FABs"></span>
+    <div class="crypto-currency__amount-input" flex="12">
+      <md-input-container class="md-block">
+            <label>Jeg får</label>
+            <input class="amount-input__button" type="number"
+            ng-model="$ctrl.toCryptoCurrency" ng-change="$ctrl.onCryptoExchange()">
+      </md-input-container>
+    </div>
 
-    <md-fab-speed-dial md-direction="down" md-open="$ctrl.cryptoIsOpen"
-                     class="md-scale md-hover-full price-caluclator__speed-selector"
-                     ng-mouseenter="$ctrl.cryptoIsOpen=true"
-                     ng-mouseleave="$ctrl.cryptoIsOpen=false">
+    <div class="crypto-currency__speed-selector" flex="4">
+      <span class="layout-fill__FABs"></span>
 
-      <md-fab-trigger>
+      <md-fab-speed-dial md-direction="down" md-open="$ctrl.cryptoIsOpen"
+                       class="md-scale md-hover-full price-caluclator__speed-selector"
+                       ng-mouseenter="$ctrl.cryptoIsOpen=true"
+                       ng-mouseleave="$ctrl.cryptoIsOpen=false">
 
-        <md-button aria-label="menu" class="md-fab md-warn"
-        id="crypto-currency__speed-selector-button">
-          <img ng-src="{{$ctrl.activeCryptoCurrency.img}}"
-          aria-label="{{$ctrl.activeCryptoCurrency.name}}">
-        </md-button>
-      </md-fab-trigger>
+        <md-fab-trigger>
 
-      <md-fab-actions>
-        <div ng-repeat="cryptoCurrency in $ctrl.cryptoCurrencies">
-          <md-button aria-label="{{cryptoCurrency.name}}"
-          class="md-fab md-raised md-mini crypto-currency__options-button"
-          ng-click="$ctrl.setNewCryptoCurrency($event, cryptoCurrency)">
-            <img ng-src="{{cryptoCurrency.img}}" aria-label="{{cryptoCurrency.name}}">
+          <md-button aria-label="menu" class="md-fab md-warn"
+          id="crypto-currency__speed-selector-button">
+            <img ng-src="{{$ctrl.activeCryptoCurrency.img}}"
+            aria-label="{{$ctrl.activeCryptoCurrency.name}}">
           </md-button>
-        </div>
-      </md-fab-actions>
+        </md-fab-trigger>
 
-    </md-fab-speed-dial>
+        <md-fab-actions>
+          <div ng-repeat="cryptoCurrency in $ctrl.cryptoCurrencies">
+            <md-button aria-label="{{cryptoCurrency.name}}"
+            class="md-fab md-raised md-mini crypto-currency__options-button"
+            ng-click="$ctrl.onCryptoCurrencySelected(cryptoCurrency)">
+              <img ng-src="{{cryptoCurrency.img}}" aria-label="{{cryptoCurrency.name}}">
+            </md-button>
+          </div>
+        </md-fab-actions>
+
+      </md-fab-speed-dial>
+
+    </div>
+
+    <div class="crypto-currency__selector" flex="8">
+      <md-input-container class="md-block">
+        <md-select ng-model="$ctrl.activeCryptoCurrency" ng-model-options="{trackBy: '$value.id'}"
+        aria-label="{{$ctrl.activeCryptoCurrency.name}}">
+          <md-option ng-repeat="cryptoCurrency in $ctrl.cryptoCurrencies"
+          ng-value="{{cryptoCurrency}}">
+            {{cryptoCurrency.abbrev}}
+          </md-option>
+        </md-select>
+      </md-input-container>
+    </div>
 
   </div>
-
-  <div class="crypto-currency__selector" flex="8">
-    <md-input-container class="md-block">
-      <md-select ng-model="$ctrl.activeCryptoCurrency" ng-model-options="{trackBy: '$value.id'}"
-      aria-label="{{$ctrl.activeCryptoCurrency.name}}">
-        <md-option ng-repeat="cryptoCurrency in $ctrl.cryptoCurrencies"
-        ng-value="{{cryptoCurrency}}">
-          {{cryptoCurrency.abbrev}}
-        </md-option>
-      </md-select>
-    </md-input-container>
-  </div>
-
-</div>
+</section>
+<exchange-rate-confirm currency-changed="$ctrl.currencyChanged"></exchange-rate-confirm>
