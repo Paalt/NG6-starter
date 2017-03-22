@@ -1,6 +1,12 @@
+@import '../common';
+
 .exchange-rate__confirmation-box {
   padding: 1.5rem;
   width: 48.75rem;
+}
+
+.exchange-rate__currency {
+  color: $accentColor;
 }
 
 .exchange-rate__price, .exchange-rate__tx-fee {

@@ -64,7 +64,7 @@ h1, h2, h3, h4, h5, h6, p {
   font-size: 0.9375rem;
 }
 
-.body {
+.body, p {
   font-size: 0.875rem;
 }
 
@@ -93,6 +93,14 @@ h1, h2, h3, h4, h5, h6, p {
 .center {
   text-align: center;
   margin: auto;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
 }
 
 /* common */

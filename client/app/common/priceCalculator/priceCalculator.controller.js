@@ -27,6 +27,8 @@ class PriceCalculatorController {
     this.activeCryptoCurrency = this.CurrenciesModel.getActiveCryptoCurrency();
     this.fromFiatCurrency = 5000;
     this.toCryptoCurrency = 0.49;
+    this.CurrenciesModel.setFiatCurrencyValue(this.fromFiatCurrency);
+    this.CurrenciesModel.setCryptoCurrencyValue(this.toCryptoCurrency);
 
   }
 
@@ -46,13 +48,15 @@ class PriceCalculatorController {
 
   onFiatExchange() {
     this.toCryptoCurrency = this.CurrenciesModel.fiatExchange(this.fromFiatCurrency);
+    this.CurrenciesModel.setFiatCurrencyValue(this.fromFiatCurrency);
+    this.CurrenciesModel.setCryptoCurrencyValue(this.toCryptoCurrency);
   }
 
   onCryptoExchange() {
     this.fromFiatCurrency = this.CurrenciesModel.cryptoExchange(this.toCryptoCurrency);
+    this.CurrenciesModel.setFiatCurrencyValue(this.fromFiatCurrency);
+    this.CurrenciesModel.setCryptoCurrencyValue(this.toCryptoCurrency);
   }
-
-
 }
 
 export default PriceCalculatorController;

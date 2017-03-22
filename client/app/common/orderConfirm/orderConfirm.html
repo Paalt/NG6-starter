@@ -1,7 +1,7 @@
 <buy-process-step></buy-process-step>
 <div layout="row" class="row--4x">
   <div flex="50">
-    <md-whiteframe class="md-whiteframe-1dp" layout="column" layout-align="center center">
+    <md-whiteframe class="md-whiteframe-1dp order-confirmation__frame" layout="column" layout-align="center center">
 
        <header flex class="order-confirmation__header">
          <h2 class="display">Vennligst se igjennom ordren</h2>
@@ -9,50 +9,82 @@
 
        <section flex class="order-confirmation__order-details" layout="row" layout-align="center center">
 
-        <div flex="50" class="order-details__prices">
-          <p class="heading">
-            Du betaler
+        <div flex="50" class="order-details__legend">
+
+          <p class="heading legend__currency-exchange-rate">
+            Kjøpskurs <span class="currency-exchange-rate__currency">1 {{$ctrl.activeCryptoCurrency.abbrev}}</span>
           </p>
-          <p class="heading">
-            Du får
-          </p>
-          <p>
-            <hr />
-          </p>
-          <p class="heading">
-            Kjøpskurs(1 {{$ctrl.activeCryptoCurrency.abbrev}})
-          </p>
-          <p class="heading">
+          <p class="heading legend__currency-tx-fee">
             Transaksjonsavgift
           </p>
+          <p class="heading legend__currency-prices">
+            Du får
+          </p>
+          <p class="heading legend__currency-prices">
+            Du betaler
+          </p>
+
         </div>
 
-        <div flex="50">
-          <p>
-            5000 NOK
-          </p>
-          <p>
-            0.49 BTC
-          </p>
-          <p>
-            <hr />
-          </p>
-          <p>
+        <div flex="50" class="order-details__values">
+
+          <p class="heading values__currency-exchange-rate">
             {{$ctrl.exchangeRate | number: 2}} NOK
           </p>
-          <p>
+          <p class="heading values__currency-tx-fee">
             25 NOK
           </p>
+
+          <p class="heading values__currency-exchanged">
+            {{$ctrl.cryptoCurrencyValue}} {{$ctrl.activeCryptoCurrency.abbrev}}
+          </p>
+          <p class="heading values__currency-pay-price">
+            {{$ctrl.fiatCurrencyValue + $ctrl.activeFiatCurrency.txFee | number: 2}} {{$ctrl.activeFiatCurrency.abbrev}}
+          </p>
+
         </div>
 
        </section>
 
-       <section class="order-confirmation__time-left" flex>
+       <section class="order-confirmation__time-left" flex layout="row" layout-align="left center">
+        <p flex class="">
+          Denne prisen gjelder i {{$ctrl.min}} min {{$ctrl.sec}} sec
+        </p>
+       </section>
 
+       <section class="order-confirmation__time-left-progression-bar" flex>
+         <md-progress-linear md-mode="determinate" value="{{$ctrl.determinateValue}}"></md-progress-linear>
        </section>
 
      </md-whiteframe>
 
 
   </div>
+</div>
+
+<div class="row--1x">
+
+</div>
+
+<div layout="column" class="row--3x">
+  <div flex>
+    <p>
+      Ved å signere aksepterer du kjøpsordren angitt over og binder deg til å betale angitt beløp.
+    </p>
+  </div>
+  <div flex>
+    <a href="#">Last ned vilkår</a>
+  </div>
+  <div flex>
+    <md-checkbox ng-model="$ctrl.termsAccepted" aria-label="Checkbox 1">
+        Jeg aksepter betingelse og vilkår {{ $ctrl.termsAccepted }}
+    </md-checkbox>
+  </div>
+  <div flex>
+    <md-button class="md-raised CTA__exchange-currency-button">Signer med BANKID</md-button>
+  </div>
+</div>
+
+<div layout class="row--1x">
+
 </div>

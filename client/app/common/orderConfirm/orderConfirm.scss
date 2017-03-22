@@ -1,19 +1,54 @@
 @import '../common';
 
+.order-confirmation__frame {
+  margin-left: 5rem;
+}
+
 .order-confirmation__header {
   background-color: $panelHeaderBg;
   width: 100%;
   padding: 0 2rem 0 2rem;
-  font-family: 'Setimo Regular';
-  font-weight: normal;
+
+  h2 {
+    font-weight: normal;
+    font-family: 'Setimo Regular';
+    margin: 0.875rem;
+  }
 }
 
 .order-confirmation__order-details {
   width: 100%;
   padding: 2rem;
 
-  .order-details__prices p {
+  .order-details__legend .legend__currency-prices, .order-details__values {
     font-family: 'Soleto Bold';
+  }
+
+  .legend__currency-prices {
     color: $accentColor;
   }
+
+  .legend__currency-exchange-rate, .legend__currency-tx-fee {
+    font-family: 'Soleto Regular';
+  }
+
+  .currency-exchange-rate__currency {
+    color: $accentColor;
+  }
+
+  .values__currency-pay-price {
+    border-bottom: 5px double $accentColor;
+  }
+}
+
+.order-confirmation__time-left {
+  width: 100%;
+
+  p {
+    margin-left: 2rem;
+  }
+}
+
+.order-confirmation__time-left-progression-bar {
+  width: 100%;
 }

@@ -13,7 +13,7 @@
         <div flex layout="row" layout-align="space-around center">
           <div flex="75">
             <p class="heading">
-                Kjøpskurs(1 {{$ctrl.activeCryptoCurrency.abbrev}})
+                Kjøpskurs <span="exchange-rate__currency">1 {{$ctrl.activeCryptoCurrency.abbrev}}</span>
             </p>
 
             <p class="heading">
@@ -28,7 +28,7 @@
             </p>
 
             <p class="heading .exchange-rate__tx-fee">
-              25 NOK
+              {{$ctrl.activeFiatCurrency.txFee}} {{$ctrl.activeFiatCurrency.abbrev}}
             </p>
           </div>
         </div>
